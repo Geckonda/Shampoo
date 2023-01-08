@@ -1,0 +1,12 @@
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\bin\Debug\net6.0\shampoo.Domain.deps.json
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\bin\Debug\net6.0\shampoo.Domain.dll
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\bin\Debug\net6.0\shampoo.Domain.pdb
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\obj\Debug\net6.0\shampoo.Domain.csproj.AssemblyReference.cache
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\obj\Debug\net6.0\shampoo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\obj\Debug\net6.0\shampoo.Domain.AssemblyInfoInputs.cache
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\obj\Debug\net6.0\shampoo.Domain.AssemblyInfo.cs
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\obj\Debug\net6.0\shampoo.Domain.csproj.CoreCompileInputs.cache
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\obj\Debug\net6.0\shampoo.Domain.dll
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\obj\Debug\net6.0\refint\shampoo.Domain.dll
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\obj\Debug\net6.0\shampoo.Domain.pdb
+C:\Users\yaloz\Desktop\shampoo\shampoo.Domain\obj\Debug\net6.0\ref\shampoo.Domain.dll

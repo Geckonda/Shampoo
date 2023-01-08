@@ -1,0 +1,15 @@
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\bin\Debug\net6.0\shampoo.DAL.deps.json
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\bin\Debug\net6.0\shampoo.DAL.dll
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\bin\Debug\net6.0\shampoo.DAL.pdb
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\bin\Debug\net6.0\shampoo.Domain.dll
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\bin\Debug\net6.0\shampoo.Domain.pdb
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\obj\Debug\net6.0\shampoo.DAL.csproj.AssemblyReference.cache
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\obj\Debug\net6.0\shampoo.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\obj\Debug\net6.0\shampoo.DAL.AssemblyInfoInputs.cache
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\obj\Debug\net6.0\shampoo.DAL.AssemblyInfo.cs
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\obj\Debug\net6.0\shampoo.DAL.csproj.CoreCompileInputs.cache
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\obj\Debug\net6.0\shampoo.DAL.csproj.CopyComplete
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\obj\Debug\net6.0\shampoo.DAL.dll
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\obj\Debug\net6.0\refint\shampoo.DAL.dll
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\obj\Debug\net6.0\shampoo.DAL.pdb
+C:\Users\yaloz\Desktop\shampoo\shampoo.DAL\obj\Debug\net6.0\ref\shampoo.DAL.dll

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<shampoo.Domain.Entity.Character>
+
+@{
+	ViewBag.Title = "title";
+	Layout = "_Layout";
+}
+<div class="container" style="display: flex; justify-content: space-around; align-items: center">
+@foreach (var character in Model)
+{
+	<div style="margin:10px; background-color:aquamarine; width:auto;text-align:center; padding: 10px; border-radius:20%;">
+		<p>@character.name</p>
+		<p>@character.surname</p>
+		<p>@character.birthday</p>
+		<p>@character.gender</p>
+	</div>
+}
+</div>
