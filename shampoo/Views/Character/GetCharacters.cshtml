@@ -1,17 +1,90 @@
-﻿@model IEnumerable<shampoo.Domain.Entity.Character>
+﻿@model List<shampoo.Domain.Entity.Character>
 
 @{
 	ViewBag.Title = "title";
 	Layout = "_Layout";
 }
-<div class="container" style="display: flex; justify-content: space-around; align-items: center">
-@foreach (var character in Model)
+
+<style>
+    .card-buttons-group {
+        text-align: right;
+        padding: 10px;
+    }
+</style>
+
+
+<div style="padding: 10px;"></div>
+@if (Model == null)
 {
-	<div style="margin:10px; background-color:aquamarine; width:auto;text-align:center; padding: 10px; border-radius:20%;">
-		<p>@character.name</p>
-		<p>@character.surname</p>
-		<p>@character.birthday</p>
-		<p>@character.gender</p>
-	</div>
+        <div class="card col-md-12">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://images.wallpaperscraft.ru/image/single/bmw_fary_podsvetka_137326_1280x720.jpg"
+                 class="img-fluid rounded-start rounded">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Список машин пуст :(</h5>
+                        <p class="card-text">
+                            Список пополниться позже, не расстраивайтесь
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding: 10px;"></div>
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
 }
-</div>
+else
+{
+        <div class="row">
+        @foreach (var character in Model)
+        {
+                    <div class="row row-cols-1 col-md-4 text-center">
+                        <div class="col" style="padding: 10px;">
+                            <div class="card">
+                        <img src="https://abrakadabra.fun/uploads/posts/2021-12/1640528661_1-abrakadabra-fun-p-serii-chelovek-na-avu-1.png" class="card-img-top" alt="@character.name">
+                                <div class="card-body">
+                                    <h5 class="card-title">@character.name</h5>
+                                    <p class="card-text">@character.surname</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">@character.appearance</li>
+                                    <li class="list-group-item">@character.goals</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a asp-action="GetCharacter" asp-route-id="@character.id" class="card-link">Перейти</a>
+                            <a asp-action="Save" asp-route-id="@character.id" class="card-link">Изменить</a>
+                            @* <a asp-controller="Basket" asp-action="Add" asp-route-id="@id" class="card-link">Добавить</a> *@
+                            @if (User.IsInRole("Admin"))
+                            {
+                                            <hr />
+                                            <a asp-controller="Car" asp-action="Delete" asp-route-id="@character.id" class="btn btn-danger">Удалить</a>
+                                            <a asp-controller="Car" asp-action="Save" asp-route-id="@character.id" class="btn btn-primary">Изменить</a>
+                            }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        }
+        </div>
+}

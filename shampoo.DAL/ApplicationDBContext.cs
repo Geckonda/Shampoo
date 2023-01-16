@@ -12,7 +12,8 @@ namespace shampoo.DAL
 	{
 		public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) 
 			: base(options) { }
-		public DbSet<Character> Character { get; set; }
+		public DbSet<Character> Characters { get; set; }
+        public DbSet<CharacterScene> CharacterScenesTest { get; set; }
 
-	}
+    }
 }

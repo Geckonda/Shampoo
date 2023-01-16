@@ -16,8 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\yaloz\Desktop\shampoo\shampoo
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/yaloz/Desktop/shampoo/shampoo/Views/CharacterScene/GetCharacterScene.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmFjdGVyU2NlbmVcR2V0Q2hhcmFjdGVyU2NlbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yaloz/Desktop/shampoo/shampoo/Views/CharacterScene/GetCharacterScenes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmFjdGVyU2NlbmVcR2V0Q2hhcmFjdGVyU2NlbmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yaloz/Desktop/shampoo/shampoo/Views/Character/GetCharacter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmFjdGVyXEdldENoYXJhY3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/yaloz/Desktop/shampoo/shampoo/Views/Character/GetCharacters.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmFjdGVyXEdldENoYXJhY3RlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yaloz/Desktop/shampoo/shampoo/Views/Character/Save.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmFjdGVyXFNhdmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yaloz/Desktop/shampoo/shampoo/Views/Home/Index.cshtml]

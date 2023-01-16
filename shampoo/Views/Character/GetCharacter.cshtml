@@ -1,0 +1,31 @@
+﻿@model shampoo.Domain.ViewModels.CharacterViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div style="padding: 10px;"></div>
+<div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="https://abrakadabra.fun/uploads/posts/2021-12/1640528661_1-abrakadabra-fun-p-serii-chelovek-na-avu-1.png"
+                 class="img-fluid rounded-start rounded" alt="@Model?.name">
+        </div>
+        <div class="col-md-4">
+            <div class="card-body">
+                <h5 class="card-title text-center">@Model?.name @Model?.surname</h5>
+                <p class="card-text"><b>Пол: </b>@Model?.gender </p>
+                <p class="card-text"><b>День рождения: </b>@Model?.birthday?.ToString("dd.MM.yyyy")</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-body">
+                <p class="card-text"><b>Внешний вид: </b>@Model?.appearance</p>
+                <p class="card-text"><b>Цели: </b>@Model?.goals</p>
+                <p class="card-text"><b>Мотивация: </b>@Model?.motivation</p>
+            </div>
+        </div>
+        <a asp-controller="CharacterScene"  asp-action="GetCharacterScenes" asp-route-id="@Model.id" class="card-link">Сцены персонажа</a>
+    </div>
+</div>

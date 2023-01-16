@@ -10,7 +10,7 @@ namespace shampoo.DAL.Interfaces
 	{
 		Task<bool> Add(T entity);
 		Task<bool> Delete(T entity);
-		Task<T> Get(int id);
-		Task<List<T>> GetAll();
-	}
+		Task<T> Update(T entity);
+        IQueryable<T> GetAll();
+    }
 }

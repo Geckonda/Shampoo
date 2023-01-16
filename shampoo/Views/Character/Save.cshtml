@@ -1,0 +1,57 @@
+﻿@model shampoo.Domain.ViewModels.CharacterViewModel
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@{
+    var textTitle = Model?.id == 0 ? "Изменение данных" : "Добавление данных";
+}
+
+<div style="padding: 10px;"></div>
+<div class="col-md-12">
+    <div class="card-body">
+        <div class="card card-outline-secondary" style="background-color: white">
+            <div class="card-header">
+                <h3 class="mb-0 text-center ParagraphHome">@textTitle</h3>
+            </div>
+            <div class="card-body">
+                <form asp-action="Save" enctype="multipart/form-data">
+                    <input asp-for="id" hidden />
+                    <div asp-validation-summary="All" style="font-size:23px; font-family:Impact, serif" class="text-danger text-center"></div>
+                    <div class="form-group">
+                        <label asp-for="name"></label>
+                        <input asp-for="name" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="surname"></label>
+                        <input asp-for="surname" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="gender"></label>
+                        <input asp-for="gender" class="form-control" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ability"></label>
+                        <textarea asp-for="ability" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="goals"></label>
+                        <textarea asp-for="goals" class="form-control"></textarea>
+                    </div>
+                    @*
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">₽</span>
+                        <input asp-for="Price" type="text" class="form-control">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" asp-for="TypeCar" id="carTypeId"></select>
+                    </div>*@
+                    <button class="btn btn-primary btn-lg float-right" type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

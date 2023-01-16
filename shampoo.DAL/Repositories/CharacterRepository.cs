@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace shampoo.DAL.Repositories
 {
-	public class CharacterRepository : ICharacterRepository
+	public class CharacterRepository : IBaseRepository<Character>
 	{
 		private readonly ApplicationDBContext _db;
 		public CharacterRepository(ApplicationDBContext db)
@@ -25,24 +25,23 @@ namespace shampoo.DAL.Repositories
 
 		public async Task<bool> Delete(Character entity)
 		{
-			_db.Character.Remove(entity);
+			_db.Characters.Remove(entity);
 			await _db.SaveChangesAsync();
 			return true;
 		}
 
-		public async Task<Character> Get(int id)
+
+		public IQueryable<Character> GetAll()
 		{
-			return await _db.Character.FirstOrDefaultAsync(x => x.id == id);
+			return _db.Characters;
 		}
 
-		public Task<List<Character>> GetAll()
-		{
-			return _db.Character.ToListAsync();
-		}
+        public async Task<Character> Update(Character entity)
+        {
+            _db.Characters.Update(entity);
+			await _db.SaveChangesAsync();
 
-		public Task<Character> GetByName(string name)
-		{
-			return _db.Character.FirstOrDefaultAsync(x => x.name == name);
-		}
+			return entity;
+        }
 	}
 }

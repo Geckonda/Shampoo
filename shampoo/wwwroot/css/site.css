@@ -14,5 +14,15 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #3a4675d4;
+}
+h1 {
+    color: white;
+}
+header {
+    background-color: #3a4675d4;
+    color: white;
+}
+.text-center{
 }

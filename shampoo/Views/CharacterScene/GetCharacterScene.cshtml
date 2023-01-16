@@ -1,0 +1,27 @@
+﻿@model shampoo.Domain.ViewModels.CharacterSceneViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<style>
+    .cont-cont{
+        padding: 5px 10px;
+        width: auto;
+        background-color: white;
+    }
+    p{
+        margin-right: 3px;
+        color: #3a4675d4;
+    }
+
+</style>
+
+<div style="padding: 10px;"></div>
+    <div class="cont-cont">
+        <div class=" right" style="text-align: right;">
+            <a style="color:#3a4675d4;">Изменить</a>
+        <a asp-controller="CharacterScene" asp-action="Delete" asp-route-id="@Model.id" style="color:red; margin-left:10px;">Удалить</a>
+        </div>
+        <p>@Model.scene</p>
+    </div>
