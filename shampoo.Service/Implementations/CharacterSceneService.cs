@@ -22,9 +22,29 @@ namespace shampoo.Service.Implementations
         {
             _characterSceneRepository = characterSceneRepository;
         }
-        public Task<IBaseResponse<CharacterSceneViewModel>> CreateCharacterScene(CharacterSceneViewModel characterScene)
+        public async Task<IBaseResponse<CharacterSceneViewModel>> CreateCharacterScene(CharacterSceneViewModel characterScene)
         {
-            throw new NotImplementedException();
+            var response = new BaseResponse<CharacterSceneViewModel>();
+            try
+            {
+                var scene = new CharacterScene()
+                {
+                    character_id = characterScene.character_id,
+                    scene = characterScene.scene
+                };
+                await _characterSceneRepository.Add(scene);
+                response.StatusCode = StatusCode.Ok;
+                return response;
+            }
+            catch(Exception ex)
+            {
+                return new BaseResponse<CharacterSceneViewModel>()
+                {
+                    Description = $"[CreateCharacterScene]: {ex.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+
         }
 
         public async Task<IBaseResponse<bool>> DeleteCharacterScene(int sceneId)
@@ -95,7 +115,7 @@ namespace shampoo.Service.Implementations
                 if(!scenes.Any())
                 {
                     response.Description = "Не найдено ни одной сцены";
-                    response.StatusCode = StatusCode.CharacterNotFound;//Исправить ( добавить енум сцену)
+                    response.StatusCode = StatusCode.ScenesAreAbsent;//Исправить ( добавить енум сцену)
                     return response;
                 }
                 response.Data= scenes;
@@ -113,9 +133,32 @@ namespace shampoo.Service.Implementations
 
         }
 
-        public Task<IBaseResponse<CharacterScene>> UpdateCharacterScene(int? sceneId, CharacterSceneViewModel characterScene)
+        public async Task<IBaseResponse<CharacterScene>> UpdateCharacterScene(int? sceneId, CharacterSceneViewModel characterScene)
         {
-            throw new NotImplementedException();
+            var response = new BaseResponse<CharacterScene>();
+            try
+            {
+                var scene = await _characterSceneRepository.GetAll().FirstOrDefaultAsync(
+                    x => x.id == sceneId);
+                if(scene == null)
+                {
+                    response.Description = "Сцена не найдена";
+                    response.StatusCode = StatusCode.InternalServerError;
+                    return response;
+                }
+                scene.scene = characterScene.scene;
+                _characterSceneRepository.Update(scene);
+                response.StatusCode = StatusCode.Ok;
+                return response;
+            }
+            catch(Exception ex)
+            {
+                return new BaseResponse<CharacterScene>()
+                {
+                    Description = $"[UpdateCharacterScene]: {ex.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
         }
     }
 }

@@ -15,23 +15,24 @@
         display:flex;
         margin-bottom: 5px;
         text-decoration:none;
+        align-items:center;
     }
     p{
-        margin-right: 3px;
+        margin:auto;
+        margin-left: 15px;
         color: #3a4675d4;
     }
 </style>
 <h1>Сцены с персонажем</h1>
 <div style="padding: 10px;"></div>
+<div style="width: max-content;padding:2px 4px;  background-color:forestgreen; border-radius: 4px;">
+    <a style="text-decoration:none;color:white;" asp-area="" asp-action="Save" asp-route-id="0" asp-route-characterId="@Model.FirstOrDefault().character_id">Создать сцену</a>
+</div>
     <div class="cont-cont">
-        @{
-            int counter = 0;
-        }
         @foreach (var scene in Model)
         {
-        counter++;
         <a class="SceneContainer" asp-controller="CharacterScene" asp-action="GetCharacterScene" asp-route-id="@scene.id">
-                <p>@scene.id| </p>
+            <div style="width:5px;height:5px;border-radius:50%;background-color:#3a4675d4;text-align:center;"> </div>
                 <p>@scene.ShortScene()</p>
             </a>
         }

@@ -34,7 +34,7 @@ namespace shampoo.Controllers
 			return RedirectToAction("Error");
 
 		}
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var response = await _characterService.DeleteCharacter(id);

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using shampoo.Domain.ViewModels;
 using shampoo.Service.Implementations;
 using shampoo.Service.Interfaces;
 
@@ -19,6 +20,8 @@ namespace shampoo.Controllers
             var response = await _characterSceneService.GetCharacterScenes(id);
             if(response.StatusCode == Domain.Enum.StatusCode.Ok)
                 return View(response.Data.ToList());
+            if (response.StatusCode == Domain.Enum.StatusCode.ScenesAreAbsent)
+                return RedirectToAction("Save", "CharacterScene", new { id = 0, characterId = id});
             return RedirectToAction("Error");
         }
 
@@ -40,6 +43,43 @@ namespace shampoo.Controllers
                 return RedirectToAction($"GetCharacterScenes", new { id = characterScenes.Data.character_id });
             }
             return RedirectToAction("Error");
+        }
+        [HttpGet]
+        /*[Authorize(Roles = "Admin")]*/
+        public async Task<IActionResult> Save(int id, int characterId)
+        {
+            if (id == 0)
+            {
+                var newScene = new CharacterSceneViewModel()
+                {
+                    character_id = characterId
+                };
+                return View(newScene);
+            }
+
+            var response = await _characterSceneService.GetCharacterScene(id);
+            if (response.StatusCode == Domain.Enum.StatusCode.Ok)
+            {
+                return View(response.Data);
+            }
+
+            return RedirectToAction("Error");
+        }
+        [HttpPost]
+        public async Task<IActionResult> Save(CharacterSceneViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.id == 0)
+                {
+                    await _characterSceneService.CreateCharacterScene(model);
+                }
+                else
+                {
+                    await _characterSceneService.UpdateCharacterScene(model.id, model);
+                }
+            }
+            return RedirectToRoute(new { controller = "CharacterScene", action = "GetCharacterScenes", id = model.character_id });
         }
     }
 }

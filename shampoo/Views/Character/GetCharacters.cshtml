@@ -72,8 +72,9 @@ else
                                     <li class="list-group-item">@character.goals</li>
                                 </ul>
                                 <div class="card-body">
-                                    <a asp-action="GetCharacter" asp-route-id="@character.id" class="card-link">Перейти</a>
-                            <a asp-action="Save" asp-route-id="@character.id" class="card-link">Изменить</a>
+                                    <a asp-action="GetCharacter" asp-route-id="@character.id" class="btn btn-primary">Перейти</a>
+                                    <a asp-action="Save" asp-route-id="@character.id" class="btn btn-primary">Изменить</a>
+                                    <a asp-action="Delete" asp-route-id="@character.id" class="btn btn-danger">Удалить</a>
                             @* <a asp-controller="Basket" asp-action="Add" asp-route-id="@id" class="card-link">Добавить</a> *@
                             @if (User.IsInRole("Admin"))
                             {

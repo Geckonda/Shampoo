@@ -43,6 +43,7 @@ namespace shampoo.Service.Implementations
                 };
                 await _characterRepository.Add(character);
                 baseResponse.StatusCode = StatusCode.Ok;
+                return baseResponse;
             }
             catch(Exception ex)
             {
@@ -52,7 +53,6 @@ namespace shampoo.Service.Implementations
                     StatusCode = StatusCode.InternalServerError
                 };
             }
-            return baseResponse;
         }
 
         public async Task<IBaseResponse<bool>> DeleteCharacter(int id)

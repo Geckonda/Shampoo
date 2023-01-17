@@ -10,6 +10,7 @@ namespace shampoo.Domain.Enum
 	{
 		Ok = 200,
 		CharacterNotFound = 404,
+		ScenesAreAbsent = 410,//Номер не соответсвует
 		InternalServerError = 500
 	}
 }
